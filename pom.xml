@@ -23,7 +23,7 @@
 	</licenses>
 
 	<modules>
-		<module>restful-timeseries-webapp</module>
+		<module>webapp</module>
 	</modules>
 
 	<dependencyManagement>
