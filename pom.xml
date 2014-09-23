@@ -143,40 +143,6 @@
         </resources>
         <pluginManagement>
             <plugins>
-
-                <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>2.1.10</version>
-                    <executions>
-                        <execution>
-                            <id>git-commit-id</id>
-                            <goals>
-                                <goal>revision</goal>
-                            </goals>
-                            <phase>validate</phase>
-                            <configuration>
-                                <dateFormat>yyyy-MM-dd HH:mm:ssZ</dateFormat>
-                                <!-- Only changing prefix since properties conflicts with jgit above
-                                <prefix>git-commit-id</prefix>-->
-                                <!-- We're using a pom in this example
-                                <skipPoms>false</skipPoms>-->
-                                <gitDescribe>
-                                    <!-- Faster to get just branch if skip = true -->
-                                    <skip>false</skip>
-                                </gitDescribe>
-
-                                <abbrevLength>7</abbrevLength>
-                                <!--
-                                <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                                <generateGitPropertiesFilename>src/main/resources/git.properties</generateGitPropertiesFilename>
-                                -->
-                                <timestampFormat>{0,date,yyyy-MM-dd HH:mm:ss}</timestampFormat>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -190,7 +156,39 @@
             <!-- ==================================================== -->
             <!-- =========== PLUGINS ACTIVE BY DEFAULT ============== -->
             <!-- ==================================================== -->
+            
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.1.10</version>
+                <executions>
+                    <execution>
+                        <id>git-commit-id</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <dateFormat>yyyy-MM-dd HH:mm:ssZ</dateFormat>
+                            <!-- Only changing prefix since properties conflicts with jgit above
+                            <prefix>git-commit-id</prefix>-->
+                            <!-- We're using a pom in this example
+                            <skipPoms>false</skipPoms>-->
+                            <gitDescribe>
+                                <!-- Faster to get just branch if skip = true -->
+                                <skip>false</skip>
+                            </gitDescribe>
 
+                            <abbrevLength>7</abbrevLength>
+                            <!--
+                            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                            <generateGitPropertiesFilename>src/main/resources/git.properties</generateGitPropertiesFilename>
+                            -->
+                            <timestampFormat>{0,date,yyyy-MM-dd HH:mm:ss}</timestampFormat>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
 
