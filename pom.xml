@@ -4,10 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.n52.sensorweb</groupId>
     <artifactId>restful-timeseries-proxy</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-rc.1</version>
     <packaging>pom</packaging>
 
     <name>RESTful Timeseries Proxy</name>
+    <description>Provides RESTful access to multiple OGC SOS instances</description>
     <inceptionYear>2014</inceptionYear>
 
     <licenses>
@@ -156,7 +157,7 @@
             <!-- ==================================================== -->
             <!-- =========== PLUGINS ACTIVE BY DEFAULT ============== -->
             <!-- ==================================================== -->
-            
+
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
