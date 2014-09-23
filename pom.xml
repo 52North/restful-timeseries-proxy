@@ -145,10 +145,11 @@
                 </plugin>
 
                 <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-                <version>2.1.10</version>
-            </plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>2.1.10</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
@@ -157,6 +158,34 @@
             <!-- ==================================================== -->
             <!-- =========== PLUGINS ACTIVE BY DEFAULT ============== -->
             <!-- ==================================================== -->
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>git-commit-id</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <dateFormat>yyyy-MM-dd HH:mm:ssZ</dateFormat>
+                            <gitDescribe>
+                                Faster to get just branch if skip = true
+                                <skip>false</skip>
+                            </gitDescribe>
+
+                            <abbrevLength>7</abbrevLength>
+
+                            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                            <generateGitPropertiesFilename>src/main/resources/git.properties</generateGitPropertiesFilename>
+
+                            <timestampFormat>{0,date,yyyy-MM-dd HH:mm:ss}</timestampFormat>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
 
@@ -254,4 +283,9 @@
         <currentYearDynamic>${maven.build.timestamp}</currentYearDynamic>
     </properties>
 
+    <scm>
+        <connection>scm:git:git://github.com/52North/restful-timeseries-proxy.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/52North/restful-timeseries-proxy.git</developerConnection>
+        <url>https://github.com/52North/restful-timeseries-proxy</url>
+    </scm>
 </project>
