@@ -8,3 +8,4 @@ output.txt
 restful-timeseries-webapp/src/main/tmp/
 sensorwebclient-webapp/nb-configuration.xml
 webapp/src/main/tmp/
+webapp/cache/
