@@ -1,195 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.n52.sensorweb</groupId>
-		<artifactId>sensorwebclient</artifactId>
-		<version>3.3.0-SNAPSHOT</version>
-	</parent>
-	<artifactId>restful-timeseries-webapp</artifactId>
-	<packaging>war</packaging>
-	<name>RESTful Timeseries Web Application</name>
-	<url>http://52north.org/communities/sensorweb/</url>
-
-	<properties>
-		<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-webapp</artifactId>
-			<type>war</type>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>timeseries-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-api</artifactId>
-      <scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-sos-server</artifactId>
-		</dependency>
-    <dependency>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
         <groupId>org.n52.sensorweb</groupId>
-        <artifactId>sensorwebclient-sos-shared</artifactId>
-    </dependency>
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-hydro</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-ags</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>sensorwebclient-sos-rest</artifactId>
-		</dependency>
-    <dependency>
-      <groupId>org.n52.sensorweb</groupId>
-      <artifactId>oxf-sos-adapter</artifactId>
-    </dependency>
+        <artifactId>restful-timeseries-proxy</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>restful-timeseries-proxy-webapp</artifactId>
+    <packaging>war</packaging>
+    <name>RESTful Timeseries Proxy Web Application</name>
+    <url>http://52north.org/communities/sensorweb/</url>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-	</dependencies>
+    <properties>
+        <webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+    </properties>
 
-	<build>
-		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-		<finalName>${project.artifactId}</finalName>
-		<resources>
-			<resource>
-				<!-- copy and filter -->
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>logback.xml</include>
-				</includes>
-				<filtering>true</filtering>
-			</resource>
-			<resource>
-				<!-- copy all other resources without filtering -->
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>logback.xml</exclude>
-				</excludes>
-			</resource>
-		</resources>
-		<plugins>
+    <dependencies>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
+            <artifactId>sensorwebclient-webapp</artifactId>
+            <type>war</type>
+        </dependency>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-					</execution>
-				</executions>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
+            <artifactId>timeseries-web</artifactId>
+        </dependency>
 
-				<configuration>
-					<artifactItems>
-						<artifactItem>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>timeseries-web</artifactId>
-							<includes>api-doc/**</includes>
-							<outputDirectory>${webappDirectory}</outputDirectory>
-							<overWrite>false</overWrite>
-						</artifactItem>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
+            <artifactId>sensorwebclient-sos-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
+            <artifactId>sensorwebclient-sos-rest</artifactId>
+        </dependency>
 
-						<artifactItem>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>timeseries-web</artifactId>
-							<includes>*.xml,*.json</includes>
-							<!-- tmp files will be copied into WEB-INF/classes -->
-							<outputDirectory>src/main/tmp</outputDirectory>
-							<overWrite>true</overWrite>
-						</artifactItem>
-					</artifactItems>
-				</configuration>
-			</plugin>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <!-- copy and filter -->
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>logback.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <!-- copy all other resources without filtering -->
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>logback.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>org.n52.sensorweb</groupId>
+                            <artifactId>timeseries-web</artifactId>
+                            <includes>api-doc/**</includes>
+                            <outputDirectory>${webappDirectory}</outputDirectory>
+                            <overWrite>false</overWrite>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+            </plugin>
 
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<webappDirectory>${webappDirectory}</webappDirectory>
-					<webResources>
-						<resource>
-							<directory>src/main/webapp</directory>
-							<filtering>true</filtering>
-							<excludes>
-								<!-- exclude files from filtering -->
-								<exclude>cache/*</exclude>
-								<exclude>img/*</exclude>
-							</excludes>
-						</resource>
-					</webResources>
-					<warName>${project.artifactId}-${project.version}</warName>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <webappDirectory>${webappDirectory}</webappDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                            <excludes>
+                                <!-- exclude files from filtering -->
+                                <exclude>cache/*</exclude>
+                                <exclude>img/*</exclude>
+                            </excludes>
+                        </resource>
+                    </webResources>
+                    <warName>${project.artifactId}-${project.version}</warName>
 
-					<overlays>
-						<overlay>
-							<groupId>org.n52.sensorweb</groupId>
-							<artifactId>sensorwebclient-webapp</artifactId>
-							<includes>
-								<include>ds/sos-instances.data.xml</include>
-								<include>WEB-INF/classes/*.json</include>
-								<include>WEB-INF/classes/*.xml</include>
-							</includes>
-							<excludes>
-								<exclude>WEB-INF/classes/spring-ses-config.xml</exclude>
-							</excludes>
-						</overlay>
-					</overlays>
-				</configuration>
-			</plugin>
+                    <overlays>
+                        <overlay>
+                            <groupId>org.n52.sensorweb</groupId>
+                            <artifactId>sensorwebclient-webapp</artifactId>
+                            <includes>
+                                <include>WEB-INF/classes/*.xml</include>
+                            </includes>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                                <exclude>WEB-INF/classes/*.json</exclude>
+                                <include>WEB-INF/classes/timeseries-api_*.xml</include>
+                                <exclude>WEB-INF/classes/spring-ses-config.xml</exclude>
+                                <exclude>WEB-INF/classes/feeder-properties.xml</exclude>
+                                <exclude>WEB-INF/classes/hibernate.cfg.xml</exclude>
+                                <exclude>WEB-INF/classes/ehcache.xml</exclude>
+                            </excludes>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<profiles>
-		<profile>
-			<id>env-dev</id>
-			<properties>
-				<env>dev</env>
-				<!-- externalize build parameters for productive environment -->
-				<local.configfile>${user.home}/restful-timeseries-build-${env}.properties</local.configfile>
-			</properties>
-			<build>
-				<filters>
-					<filter>${local.configfile}</filter>
-				</filters>
-			</build>
-		</profile>
+    <profiles>
+        <profile>
+            <id>env-dev</id>
+            <properties>
+                <env>dev</env>
+                <!-- externalize build parameters for productive environment -->
+                <local.configfile>${user.home}/restful-timeseries-build-${env}.properties</local.configfile>
+            </properties>
+            <build>
+                <filters>
+                    <filter>${local.configfile}</filter>
+                </filters>
+            </build>
+        </profile>
 
     </profiles>
 </project>
