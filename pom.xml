@@ -155,6 +155,28 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.jasig.maven</groupId>
+                    <artifactId>maven-notice-plugin</artifactId>
+                    <version>1.0.6</version>
+                    <configuration>
+                        <noticeTemplate>misc/NOTICE.template</noticeTemplate>
+                        <licenseMapping>
+                            <param>http://52north.github.io/cdn/licenses/license-mappings.xml</param>
+                        </licenseMapping>
+                        <generateChildNotices>false</generateChildNotices>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>check-license</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                
+                <plugin>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.3.2</version>
                     <configuration>
@@ -171,7 +193,7 @@
             <!-- =========== PLUGINS ACTIVE BY DEFAULT ============== -->
             <!-- ==================================================== -->
 
-           <plugin>
+            <plugin>
                 <groupId>org.codehaus.groovy.maven</groupId>
                 <artifactId>gmaven-plugin</artifactId>
                 <version>1.0</version>
@@ -258,27 +280,6 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.jasig.maven</groupId>
-                <artifactId>maven-notice-plugin</artifactId>
-                <version>1.0.6</version>
-                <configuration>
-                    <noticeTemplate>misc/NOTICE.template</noticeTemplate>
-                    <licenseMapping>
-                        <param>http://52north.github.io/cdn/licenses/license-mappings.xml</param>
-                    </licenseMapping>
-                    <generateChildNotices>false</generateChildNotices>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>check-license</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
@@ -365,7 +366,7 @@
         <hamcrest.version>1.3</hamcrest.version>
         <timeseries.api.version>1.2.0</timeseries.api.version>
         <org.springframework.version>3.2.0.RELEASE</org.springframework.version>
-        <swc.version>3.3.0-rc.2-SNAPSHOT</swc.version>
+        <swc.version>3.3.0-rc.2</swc.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sensorwebclient.webapp.name>${project.artifactId}-${project.version}</sensorwebclient.webapp.name>
