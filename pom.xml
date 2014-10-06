@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.n52.sensorweb</groupId>
     <artifactId>restful-timeseries-proxy</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>RESTful Timeseries Proxy</name>
@@ -403,6 +403,6 @@
         <connection>scm:git:git://github.com/52North/restful-timeseries-proxy.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/52North/restful-timeseries-proxy.git</developerConnection>
         <url>https://github.com/52North/restful-timeseries-proxy</url>
-      <tag>1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
