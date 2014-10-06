@@ -136,6 +136,7 @@
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                                 <exclude>WEB-INF/classes/*.json</exclude>
+                                <exclude>WEB-INF/classes/logback.xml</exclude>
                                 <include>WEB-INF/classes/timeseries-api_*.xml</include>
                                 <exclude>WEB-INF/classes/spring-ses-config.xml</exclude>
                                 <exclude>WEB-INF/classes/feeder-properties.xml</exclude>
