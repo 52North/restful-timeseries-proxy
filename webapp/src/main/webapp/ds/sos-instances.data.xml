@@ -15,6 +15,7 @@ web interface -->
         <supportsFirstLatest>true</supportsFirstLatest>
         <metadataHandler>org.n52.server.da.oxf.DefaultMetadataHandler</metadataHandler>
         <adapter>org.n52.server.da.oxf.SOSAdapter_OXFExtension</adapter>
+        <httpConnectionPoolSize>50</httpConnectionPoolSize>
     </instance>
 
 </instances>
