@@ -65,6 +65,10 @@
             <version>${logback.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>cors-filter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
