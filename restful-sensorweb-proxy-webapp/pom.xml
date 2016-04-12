@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.n52.sensorweb</groupId>
-        <artifactId>restful-timeseries-proxy</artifactId>
+        <artifactId>restful-sensorweb-proxy</artifactId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>restful-timeseries-proxy-webapp</artifactId>
+    <artifactId>restful-sensorweb-proxy-webapp</artifactId>
     <packaging>war</packaging>
-    <name>RESTful Timeseries Proxy Web Application</name>
+    <name>RESTful SensorWeb Proxy Web Application</name>
     <url>http://52north.org/communities/sensorweb/</url>
 
     <properties>

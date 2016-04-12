@@ -7,11 +7,11 @@
         <version>5.6.9</version>
     </parent>
     <groupId>org.n52.sensorweb</groupId>
-    <artifactId>restful-timeseries-proxy</artifactId>
+    <artifactId>restful-sensorweb-proxy</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>RESTful Timeseries Proxy</name>
+    <name>RESTful SensorWeb Proxy</name>
     <description>Provides RESTful access to multiple OGC SOS instances</description>
     <inceptionYear>2014</inceptionYear>
 
@@ -23,7 +23,7 @@
     </licenses>
 
     <modules>
-        <module>webapp</module>
+        <module>restful-sensorweb-proxy-webapp</module>
     </modules>
 
     <dependencyManagement>
@@ -374,7 +374,7 @@
         <slf4j.version>1.7.2</slf4j.version>
         <logback.version>1.0.11</logback.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <timeseries.api.version>1.4.0-SNAPSHOT</timeseries.api.version>
+        <timeseries.api.version>1.7.1</timeseries.api.version>
         <org.springframework.version>3.2.0.RELEASE</org.springframework.version>
         <swc.version>3.3.0-rc.3-SNAPSHOT</swc.version>
 
