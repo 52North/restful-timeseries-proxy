@@ -175,6 +175,7 @@
                         </licenseMapping>
                         <generateChildNotices>false</generateChildNotices>
                     </configuration>
+                    <inherited>false</inherited>
                     <executions>
                         <execution>
                             <id>check-license</id>
@@ -193,6 +194,12 @@
                         <preparationGoals>clean</preparationGoals>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
+                </plugin>
+                                
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>9.3.7.v20160115</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -279,6 +286,7 @@
                     </excludes>
                     <strictCheck>true</strictCheck>
                 </configuration>
+                <inherited>false</inherited>
                 <executions>
                     <execution>
                         <id>check-license</id>
