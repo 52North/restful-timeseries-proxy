@@ -6,7 +6,7 @@
         <artifactId>restful-sensorweb-proxy</artifactId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>restful-sensorweb-proxy-webapp</artifactId>
+    <artifactId>webapp</artifactId>
     <packaging>war</packaging>
     <name>RESTful SensorWeb Proxy Web Application</name>
     <url>http://52north.org/communities/sensorweb/</url>

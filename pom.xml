@@ -23,7 +23,7 @@
     </licenses>
 
     <modules>
-        <module>restful-sensorweb-proxy-webapp</module>
+        <module>webapp</module>
     </modules>
 
     <dependencyManagement>
