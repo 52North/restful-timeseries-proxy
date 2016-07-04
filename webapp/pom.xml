@@ -12,7 +12,7 @@
     <url>http://52north.org/communities/sensorweb/</url>
 
     <properties>
-        <webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     </properties>
 
     <dependencies>
@@ -77,7 +77,7 @@
 
     <build>
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>sos-proxy-webapp</finalName>
         <resources>
             <resource>
                 <!-- copy and filter -->
@@ -139,7 +139,7 @@
                             </excludes>
                         </resource>
                     </webResources>
-                    <warName>${project.artifactId}-${project.version}</warName>
+                    <warName>${project.build.finalName}-${project.version}</warName>
 
                     <overlays>
                         <overlay>

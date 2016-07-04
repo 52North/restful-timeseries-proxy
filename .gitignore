@@ -11,3 +11,4 @@ sensorwebclient-webapp/nb-configuration.xml
 webapp/src/main/tmp/
 webapp/cache/
 webapp/src/main/resources/git.properties
+/webapp/nbactions.xml
