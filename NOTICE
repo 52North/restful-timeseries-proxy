@@ -3,6 +3,7 @@ Copyright 2013 52°North Initiative for Geospatial Open Source Software GmbH
 Licensed under GNU General Public License, v2.0
 
 This project includes:
+  52North OX-Framework SML under GNU General Public License, v2.0
   52North OxFramework Common under GNU General Public License, v2.0
   52North OxFramework OWS under GNU General Public License, v2.0
   52North OxFramework SWES under GNU General Public License, v2.0
@@ -11,6 +12,7 @@ This project includes:
   52North OxFramework Xmlbeans Handling under GNU General Public License, v2.0
   52North Sensor Web Client PDF report structure under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
   AOP alliance under Public Domain
+  Apache Commons Codec under Apache License, Version 2.0
   Apache FOP under The Apache Software License, Version 2.0
   Apache XML Graphics Commons under The Apache Software License, Version 2.0
   API interfaces under Lesser General Public License (LGPL)
@@ -33,10 +35,12 @@ This project includes:
   Batik XML utility library under The Apache Software License, Version 2.0
   Bean Validation API under Apache License, Version 2.0
   c3p0:JDBC DataSources/Resource Pools under GNU LESSER GENERAL PUBLIC LICENSE
-  Commons Codec under The Apache Software License, Version 2.0
+  Commons IO under The Apache Software License, Version 2.0
   Commons Lang under The Apache Software License, Version 2.0
   Commons Logging under The Apache Software License, Version 2.0
   Commons Pool under The Apache Software License, Version 2.0
+  Connector for an ArcGIS SOS extension. under GNU General Public License, v2.0
+  CORS Filter under The Apache Software License, Version 2.0
   EPSG Authority Service using HSQL database under Lesser General Public License (LGPL) or EPSG database distribution license or BSD License for HSQL
   FindBugs-jsr305 under The Apache Software License, Version 2.0
   gimv under The Apache Software License, Version 2.0
@@ -48,22 +52,19 @@ This project includes:
   HSQLDB under HSQLDB License
   HttpClient under Apache License
   HttpCore under Apache License
-  IO under The Apache Software License, Version 2.0
   isorelax under MIT license
-  Jackson-annotations under The Apache Software License, Version 2.0 or GNU Lesser General Public License, Version 2.1
-  Jackson-core under The Apache Software License, Version 2.0 or GNU Lesser General Public License, Version 2.1
-  jackson-databind under The Apache Software License, Version 2.0 or GNU Lesser General Public License, Version 2.1
-  jackson-module-jsonSchema under The Apache Software License, Version 2.0 or GNU Lesser General Public License, Version 2.1
+  Jackson-annotations under The Apache Software License, Version 2.0
+  Jackson-core under The Apache Software License, Version 2.0
+  jackson-databind under The Apache Software License, Version 2.0
   Java Excel API under GNU Lesser General Public License
-  JavaMelody - Core under LGPL
+  Java Property Utility under The Apache Software License, Version 2.0
   JBoss Logging 3 under GNU Lesser General Public License, version 2.1
   JCL 1.1.1 implemented over SLF4J under MIT License
-  jcommon under GNU Lesser General Public Licence
-  jdom under JDOM license, https://github.com/hunterhacker/jdom/blob/master/LICENSE.txt
-  jfreechart under GNU Lesser General Public Licence
+  JCommon under GNU Lesser General Public Licence
+  jdom under JDOM license (Apache style), https://github.com/hunterhacker/jdom/blob/master/LICENSE.txt
+  JFreeChart under GNU Lesser General Public Licence
   jgridshift under GNU Lesser General Public License, version 2.0 (LGPLv2)
-  Joda time under Apache 2
-  JRobin under LGPL
+  Joda-Time under Apache 2
   jsr-275 under BSD License
   JTS Topology Suite under Lesser General Public License (LGPL)
   JUnit under Common Public License Version 1.0
@@ -101,8 +102,8 @@ This project includes:
   PostgreSQL JDBC Driver under BSD License
   Quartz Enterprise Job Scheduler under Apache 2.0
   Referencing services under Lesser General Public License (LGPL)
-  RESTful Timeseries Proxy under GNU General Public License, v2.0
-  RESTful Timeseries Proxy Web Application under GNU General Public License, v2.0
+  RESTful SensorWeb Proxy under GNU General Public License, v2.0
+  RESTful SensorWeb Proxy Web Application under GNU General Public License, v2.0
   Saxon-HE under Mozilla Public License Version 1.0
   Sensor Web Client API under GNU General Public License, v2.0
   Sensor Web Client Web Application under GNU General Public License, v2.0
@@ -111,6 +112,7 @@ This project includes:
   Sensor Web Timeseries API - SPI under GNU General Public License, Version 2.0
   Shared SOS Components under GNU General Public License, v2.0
   SLF4J API Module under MIT License
+  SOS Hydrology Profil Connector under GNU General Public License, v2.0
   SOS Rest Interface under GNU General Public License, v2.0
   SOS Server Components under GNU General Public License, v2.0
   Spring AOP under The Apache Software License, Version 2.0
@@ -123,7 +125,7 @@ This project includes:
   Spring Web under The Apache Software License, Version 2.0
   Spring Web MVC under The Apache Software License, Version 2.0
   StAX API under The Apache Software License, Version 2.0
-  vecmath under GNU General Public License (GPL), version 2, with the CLASSPATH exception
+  vecmath under Sun Binary Code License Agreement
   W3C SOAP specification recommondation (v1.2 part 1) under The Apache Software License, Version 2.0
   W3C WS-Addressing specification schemas (v1.0) under The Apache Software License, Version 2.0
   W3C xlink schema (spec. v1.1.0) under The Apache Software License, Version 2.0
