@@ -2,6 +2,7 @@ General Infos:
 ==============
 project = ${artifactId}
 version = ${version}
+rest-api = ${series.api.version}
 
 Details:
 ========
