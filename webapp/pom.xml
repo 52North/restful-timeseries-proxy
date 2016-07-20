@@ -16,12 +16,6 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>
-            <groupId>org.n52.sensorweb</groupId>
-            <artifactId>sensorwebclient-webapp</artifactId>
-            <type>war</type>
-        </dependency>-->
-
         <dependency>
             <groupId>org.n52.sensorweb</groupId>
             <artifactId>timeseries-web</artifactId>
@@ -171,7 +165,7 @@
                     <stopPort>34343</stopPort>
                     <reload>manual</reload>
                     <webApp>
-                        <contextPath>/${project.build.finalName}</contextPath>
+                        <contextPath>/</contextPath>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webApp>
                     <systemProperties>
