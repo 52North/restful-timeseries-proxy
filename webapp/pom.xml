@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.n52.sensorweb</groupId>
-        <artifactId>restful-timeseries-proxy</artifactId>
-        <version>1.0.0</version>
+        <artifactId>restful-sensorweb-proxy</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>restful-timeseries-proxy-webapp</artifactId>
+    <artifactId>sos-proxy-webapp</artifactId>
     <packaging>war</packaging>
-    <name>RESTful Timeseries Proxy Web Application</name>
+    <name>RESTful SensorWeb Proxy Web Application</name>
     <url>http://52north.org/communities/sensorweb/</url>
 
     <properties>
@@ -16,12 +16,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.n52.sensorweb</groupId>
-            <artifactId>sensorwebclient-webapp</artifactId>
-            <type>war</type>
-        </dependency>
-
         <dependency>
             <groupId>org.n52.sensorweb</groupId>
             <artifactId>timeseries-web</artifactId>
@@ -33,7 +27,19 @@
         </dependency>
         <dependency>
             <groupId>org.n52.sensorweb</groupId>
+            <artifactId>sensorwebclient-hydro</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
+            <artifactId>sensorwebclient-ags</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.n52.sensorweb</groupId>
             <artifactId>sensorwebclient-sos-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
 
         <dependency>
@@ -57,11 +63,15 @@
             <version>${logback.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>cors-filter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>sos-proxy-webapp</finalName>
         <resources>
             <resource>
                 <!-- copy and filter -->
@@ -123,8 +133,8 @@
                             </excludes>
                         </resource>
                     </webResources>
-                    <warName>${project.artifactId}-${project.version}</warName>
-
+                    <warName>${project.build.finalName}-${project.version}</warName>
+<!--
                     <overlays>
                         <overlay>
                             <groupId>org.n52.sensorweb</groupId>
@@ -143,10 +153,29 @@
                                 <exclude>WEB-INF/classes/ehcache.xml</exclude>
                             </excludes>
                         </overlay>
-                    </overlays>
+                    </overlays>-->
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <configuration>
+                    <stopKey>C</stopKey>
+                    <stopPort>34343</stopPort>
+                    <reload>manual</reload>
+                    <webApp>
+                        <contextPath>/</contextPath>
+                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
+                    </webApp>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>catalina.base</name>
+                            <value>${project.build.directory}</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
