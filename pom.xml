@@ -322,7 +322,7 @@
                 <application.title>RESTful Timeseries Proxy</application.title>
 
                 <!-- Logging settings -->
-                <config.logger.fileappender.filepath>${catalina.base:-.}/logs</config.logger.fileappender.filepath>
+                <config.logger.fileappender.filepath>${catalina.base:-.}/${project.artifactId}</config.logger.fileappender.filepath>
                 <config.logger.level>WARN</config.logger.level>
                 <config.logger.level.org.n52>INFO</config.logger.level.org.n52>
                 <config.logger.level.client>DEBUG</config.logger.level.client>
